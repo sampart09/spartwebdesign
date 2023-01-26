@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web Developer Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <div class="logo"><img class="logoimage" src="/Images/spartlogolong.png"></div>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <div class="links">
+          <a href="#" id="home-button" class="nav-link">Home</a>
+          <a href="#section1" class="nav-link">About</a>
+          <a href="#section2" class="nav-link">Services</a>
+          <a href="#" class="nav-link">Portfolio</a>
+          <a href="#" class="nav-link">Blog</a>
+          <a href="#" class="nav-link">Contact</a>
+        </div>
+
+      </nav>
+    </header>
+  </div>
+  <section id="section1">
+    <div class="container">
+      <div class="about">
+        <h1 class="aboutmeheader">About Me</h1>
+        <div class="boxes">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        </div>
+        <br>
+        <p>My name is Sam and welcome to my digital realm! I am a web designer and developer with a passion for crafting visually stunning
+          and intuitive websites that are out of this world. My expertise in HTML, CSS, JavaScript, JQuery and Solidity,
+          allows me to create unique and engaging user experiences.</p><br><p>
+
+          As a web designer, I am constantly inspired by the infinite possibilities of the cosmos and the vastness of
+          space. I strive to infuse my work with a sense of wonder and exploration, inviting users on a journey through
+          the digital galaxy. My designs are clean, modern and minimalistic, with a touch of futurism, making them stand
+          out from the rest.</p><br><p>
+
+          Whether it's a simple brochure website or a complex decentralized application, I have the skills and
+          experience to make it happen. I am always eager to take on new challenges and push the boundaries of what's
+          possible. Let's explore the digital galaxy together and create something truly out of this world!</p><br><p>
+
+          So, if you are looking for a web designer and developer who can help you create a website that is out of this
+          world, look no further. Let's work together and make your digital dreams a reality!</p>
+      </div>
+    </div>
+  </section>
+  <section id="section2">
+    <p> Section 2 content</p>
+  </section>
+  <main id="main">
+    <div class="container">
+      <div class="intro-section">
+        <h1 class="headline">Web Designer & Developer</h1>
+        <p class="subheadline">I'm a freelance web designer and developer on a mission to create websites that are not
+          only visually stunning, but also user-friendly.
+          From custom designs to full-stack development, I'll help you blast off into the digital galaxy.</p>
+        <button id="download-button" class="introbtn" type="button">Recruit Me</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+<script src="script.js"></script>
+<script>
+  $(document).ready(function () {
+    $("nav a").not("#home-button").click(function (e) {
+      e.preventDefault();
+      var sectionId = $(this).attr("href");
+      $("nav a").removeClass("active");
+      $(this).addClass("active");
+      $("section").not(sectionId).fadeOut(500);
+      $(sectionId).fadeToggle(function () {
+        $(this).toggleClass("open");
+      });
+    });
+    $("#home-button").click(function (e) {
+      e.preventDefault();
+      $("nav a").removeClass("active");
+      $("section").fadeOut(500).removeClass("open");
+    });
+  });
+</script>
+<script>
+  var downloadButton = document.getElementById('download-button');
+  downloadButton.addEventListener('click', function () {
+    window.location.href = "/files/samscv.docx";
+  });
+</script>
+
+</html>
